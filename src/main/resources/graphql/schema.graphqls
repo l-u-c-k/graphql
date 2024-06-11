@@ -1,0 +1,26 @@
+type Query {
+    getAllBooks: [BookDTO]
+    getBookById(id: ID!): BookDTO
+}
+
+type Mutation {
+    createBook(bookInputDTO: BookInputDTO!): BookDTO
+    updateBook(id: ID!, bookInputDTO: BookInputDTO!): BookDTO
+    deleteBook(id: ID!): Boolean
+}
+
+input BookInputDTO {
+    title: String!
+    author: String!
+    genre: String!
+    price: Float!
+}
+
+type BookDTO {
+    id: ID!
+    title: String
+    author: String
+    genre: String
+    price: Float
+}
+
